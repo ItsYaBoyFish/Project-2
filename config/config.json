@@ -2,14 +2,14 @@
   "development": {
     "username": "userTeam",
     "password": "password",
-    "database": "exampledb",
+    "database": "giftListApp",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "userTeam",
     "password": "password",
-    "database": "testdb",
+    "database": "giftListApp",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
