@@ -1,13 +1,13 @@
 {
   "development": {
-    "username": "userTeam",
+    "username": "teamUser",
     "password": "password",
     "database": "giftListApp",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "userTeam",
+    "username": "teamUser",
     "password": "password",
     "database": "giftListApp",
     "host": "localhost",
