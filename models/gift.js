@@ -26,6 +26,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     }
+  }, {
+    timestamps: false
   });
   Gift.removeAttribute("createdAt");
   Gift.removeAttribute("updatedAt");
