@@ -57,4 +57,10 @@ module.exports = function(app) {
       res.json(dbGift);
     });
   });
+
+  app.post("/api/gifts", function(req, res) {
+    db.Gift.create(req.body).then(function(dbGift) {
+      res.json(dbGift);
+    });
+  });
 };
