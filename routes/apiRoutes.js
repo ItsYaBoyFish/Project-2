@@ -48,4 +48,13 @@ module.exports = function(app) {
       res.json(dbGift);
     });
   });
+
+  app.put("/api/gifts/:id", function(req, res) {
+    db.Gift.update(
+      { purchased: 1},
+      { where: { giftID: req.params.id } }
+    ).then(function(dbGift) {
+      res.json(dbGift);
+    });
+  });
 };
