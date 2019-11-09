@@ -43,7 +43,7 @@ signUpFormBTN.addEventListener('click', function() {
 	}
 
 	console.log(data);
-	axios.post('/saveNewUserRouteHere', data).then(function(results) {
+	axios.post('/createUser', data).then(function(results) {
 		console.log(results);
 	})
 })
