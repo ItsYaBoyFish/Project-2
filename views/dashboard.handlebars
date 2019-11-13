@@ -13,11 +13,8 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a href="/dashboard"class="navbar-item">
+      <a id="link-shopping" class="navbar-item">
         Shopping Lists
-      </a>
-      <a href="/mylist"class="navbar-item">
-        My List
       </a>
     </div>
 
@@ -40,14 +37,14 @@
     <h3 class="modal-header-title">Gift Recipients!</h3>
     <button class="button" id="modal-show">Create A Recipient!</button>
   </div>
-  {{#each people}}
+  {{#each recips}}
     <div class="card">
       <div class="card-content">
         <h3 class="title card-title">{{this.recipient_name}}</h3>
       </div> <!-- Card Content -->
       <footer class="card-footer">
-        <a data-recipient-name={{this.recipient_name}} data-recipient-id={{this.recipient_id}} class="card-footer-item button functionality-showGifts">Show Gift List</a>
-        <button data-recipient-name={{this.recipient_name}} data-recipient-id={{this.recipient_id}} class="card-footer-item button functionality-delete">Delete</button>
+        <a data-recipient-name={{this.recipient_name}} data-recipient-id={{this.recipientID}} class="card-footer-item button functionality-showGifts">Show Gift List</a>
+        <button data-recipient-name={{this.recipient_name}} data-recipient-id={{this.recipientID}} class="card-footer-item button functionality-delete">Delete</button>
         {{!-- <p data-recipient-id={{this.recipient_id}} class="card-footer-item button gifts">Show Gift List</>
         <p data-recipient-id={{this.recipient_id}} class="card-footer-item button delete">Delete</p> --}}
       </footer>

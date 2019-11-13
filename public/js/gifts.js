@@ -1,5 +1,8 @@
 // console.log("hello");
 
+const shoppingLink = $('#link-shopping');
+shoppingLink.attr('href', `/api/recip/${sessionStorage.getItem('lipin-userID')}`);
+
 if (sessionStorage.getItem('lipin-recipID') === null) {
   console.log(`Session Storage empty`);
   location.href = `http://${location.host}/`

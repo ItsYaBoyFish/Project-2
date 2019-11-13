@@ -1,5 +1,9 @@
 // console.log("hello");
 
+const shoppingLink = $('#link-shopping');
+shoppingLink.attr('href', `/api/recip/${sessionStorage.getItem('lipin-userID')}`);
+
+
 if (sessionStorage.getItem('lipin-userID') === null) {
   console.log(`Session Storage empty`);
   location.href = `http://${location.host}/`
@@ -21,6 +25,10 @@ $(document).on('click', '.functionality-showGifts', function() {
 $(document).on('click', '.functionality-delete', function() {
   var id = $(this).attr('data-recipient-id');
   console.log(`Delete Button Clicked, ID: ${id}`);
+  axios.delete(`/api/recip/${id}`).then(function(response) {
+    console.log(response);
+    location.reload();
+  })
 });
 
 $(document).on('click', '.logOut-Button', function() {
@@ -53,9 +61,11 @@ $(document).on('click', '#submit-modal', function() {
     userId: userId
   }
 
-  console.log(data);
+  // console.log(data);
 
-  // axios.post('/createNewRecip', data).then(function(response) {
-  //   console.log(response);
-  //   }).catch(err => console.log(err)); 
+  axios.post('/api/recip', data).then(function(response) {
+    console.log(response);
+    location.reload();
+    console.log('After the reload');
+  })
 })

@@ -40,7 +40,7 @@ signInFormBTN.addEventListener('click', function(e) {
 		} else {
 			sessionStorage.setItem('lipin-username', user.userInfo.username);
 			sessionStorage.setItem('lipin-userID', user.userInfo.userID);
-			location.href = `http://${location.host}/dashboard`;
+			location.href = `http://${location.host}/api/recip/${sessionStorage.getItem('lipin-userID')}`;
 		}
 	})
 })
@@ -63,7 +63,7 @@ signUpFormBTN.addEventListener('click', function(e) {
 		var userInfo = response.data;
 		sessionStorage.setItem('lipin-username', userInfo.username);
 		sessionStorage.setItem('lipin-userID', userInfo.userID);
-		location.href = `http://${location.host}/dashboard`;
+		location.href = `http://${location.host}/api/recip/${sessionStorage.getItem('lipin-userID')}`;
 	})
 })
 
