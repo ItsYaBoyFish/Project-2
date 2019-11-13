@@ -16,11 +16,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     gift_url: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: ''
     },
     receipt: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: ''
     },
     recipientID: {
       type: DataTypes.INTEGER,

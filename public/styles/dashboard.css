@@ -1,0 +1,125 @@
+/* #ff5e62 */
+/* #ff9966 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  cursor: pointer;
+}
+
+/* .card {
+  background-color: lightblue;
+  width: 60%;
+  position: absolute;
+  right: 0;
+  margin-top: .75em;
+  margin-right: .75em;
+  height: 80px;
+}
+
+.card .button {
+  background-color: lightblue;
+} */
+
+.modal-button-container {
+  height: 40px;
+}
+
+.modal-button-container .button {
+  color: #fff;
+  background-color: #ff5e62;
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  margin-right: .75em;
+  margin-top: .3em;
+}
+
+.modal-card-body form input {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.modal-save {
+  background-color: #ff5e62;
+  outline: none;
+  border: none;
+  color: #fff;
+}
+
+.card-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 600px;
+  width: 600px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 24px rgb(99, 99, 99);
+  margin-top: 2em;
+  overflow: scroll;
+}
+
+.card {
+  margin-top: .75em;
+  margin-bottom: .75em;
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ff5e62;
+}
+
+.navbar-title {
+  color: black;
+}
+
+.navbar-item {
+  color: black;
+}
+
+.navbar-item:hover {
+  background-color: #ff5e62 !important;
+  outline: none;
+  color: #fff !important;
+}
+
+
+.purchased-card {
+  background-color: rgba(46, 241, 46, 0.596);
+}
+
+.purchase {
+  background-color: #ff5e62;
+  color: #fff;
+}
+
+.purchase:hover {
+  color: #fff;
+}
+
+.delete-button {
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+}
+
+.modal-header-title {
+  color: black;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 1em;
+}
+

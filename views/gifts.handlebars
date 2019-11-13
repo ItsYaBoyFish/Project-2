@@ -1,0 +1,90 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <div class="navbar-item">
+      <h1 class="navbar-title title">Lipin</h1>
+    </div>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/dashboard"class="navbar-item">
+        Shopping Lists
+      </a>
+      <a href="/mylist"class="navbar-item">
+        My List
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a href="/" class="button is-light logOut-Button">
+            Log out
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="card-container">
+  <div class="modal-button-container">
+    <h3 class="modal-header-title is-3" id="recip-name">Gifts For: Austin</h3>
+    <button class="button" id="modal-show">Create A Gift!</button>
+  </div>
+  {{#each giftsPurchased}}
+    <div class="card purchased-card">
+      <div class="card-content">
+        <h3 class="title card-title">{{this.gift_name}}</h3>
+      </div> <!-- Card Content -->
+      <footer class="card-footer">
+        {{!-- <button data-recipient-name={{this.gift_name}} data-recipient-id={{this.giftID}} class="card-footer-item button functionality-showGifts">Show Gift List</button> --}}
+        <button data-gift-id={{this.giftID}} data-recipient-id={{this.giftID}} class="card-footer-item purchase button functionality-update">Return Purchase</button>
+        <button data-gift-id={{this.giftID}} data-recipient-id={{this.giftID}} class="card-footer-item delete-button button functionality-delete">Delete</button>
+      </footer>
+    </div> <!-- Card -->
+  {{/each}}
+
+  <!-- For the not purchased Cards -->
+
+  {{#each giftsNotPurchased}}
+    <div class="card">
+      <div class="card-content">
+        <h3 class="title card-title">{{this.gift_name}}</h3>
+      </div> <!-- Card Content -->
+      <footer class="card-footer">
+        {{!-- <button data-recipient-name={{this.gift_name}} data-recipient-id={{this.giftID}} class="card-footer-item button functionality-showGifts">Show Gift List</button> --}}
+        <button data-gift-id={{this.giftID}} data-recipient-id={{this.giftID}} class="card-footer-item purchase button functionality-update">Purchased</button>
+        <button data-gift-id={{this.giftID}} data-recipient-id={{this.giftID}} class="card-footer-item delete-button button functionality-delete">Delete</button>
+      </footer>
+    </div> <!-- Card -->
+  {{/each}}
+</div> <!-- End of container -->
+  
+
+<!-- Modal -->
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Create A New Gift!</p>
+      <button class="delete close-modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+        <form action="#">
+          <input id="new-item-name" type="text" class="input" placeholder="Gift Name">
+          {{!-- <input id="recipId" type="text" class="input" placeholder="Recipient ID (Testing Purposes)"> --}}
+        </form>
+    </section>
+    <footer class="modal-card-foot">
+      <button id="submit-modal" class="button modal-save">Save!</button>
+      <button class="button close-modal">Cancel</button>
+    </footer>
+  </div>
+</div>
