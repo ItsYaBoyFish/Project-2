@@ -1,29 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // // Get all examples
-  // app.get("/api/examples", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
-
-  // // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
   app.get("/api/gifts", function(req, res) {
-    console.log("hey butt face");
     db.Gift.findAll({}).then(function(dbGift) {
       res.send(dbGift);
     });
@@ -68,7 +46,6 @@ module.exports = function(app) {
   });
 
   app.put("/api/gifts/:id", function(req, res) {
-    console.log('Update route');
     db.Gift.findAll({
       where: {giftID: req.params.id}
     }).then(function(response) {
@@ -111,13 +88,21 @@ module.exports = function(app) {
 
 
 
-  app.get("/api/recip", function(req,res){
-    console.log("Hello")
+  app.get("/api/recip/:id", function(req,res){
+    var id = req.params.id;
     // console.log(dbRecipient);
     db.Recipient.findAll({
+      where: {userID: id}
     })
     .then(function(dbRecipient) {
-         res.json(dbRecipient);
+      var data = {
+        layout: 'dashboard',
+        userID: id,
+        recips: dbRecipient
+      }
+
+      res.render('dashboard', data)
+      //  res.send(dbRecipient);
      })
 })
 
@@ -127,12 +112,20 @@ app.delete("/api/recip/:id", function(req,res){
             recipientID: req.params.id
         }
     }).then(function(dbRecipient){
-        res.json(dbRecipient);
+      var data = {
+        layout: 'dashboard',
+        recips: dbRecipient
+      }
+
+      res.render('dashboard', data)
+        // res.json(dbRecipient);
     })
 })
 
-app.post("/api/recip/", function(req, res) {
-  console.log("POST")
-  db.Recipient.create({recipient_name:"Test6", userID: 6})
+app.post("/api/recip", function(req, res) {
+  // console.log("POST")
+  db.Recipient.create({recipient_name: req.body.name, userID: req.body.userId}).then(function(result) {
+    res.send(result);
+  })
 })
 };
