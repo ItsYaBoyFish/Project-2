@@ -108,4 +108,31 @@ module.exports = function(app) {
       res.json(dbGift);
     });
   });
+
+
+
+  app.get("/api/recip", function(req,res){
+    console.log("Hello")
+    // console.log(dbRecipient);
+    db.Recipient.findAll({
+    })
+    .then(function(dbRecipient) {
+         res.json(dbRecipient);
+     })
+})
+
+app.delete("/api/recip/:id", function(req,res){
+    db.Recipient.destroy({
+        where: {
+            recipientID: req.params.id
+        }
+    }).then(function(dbRecipient){
+        res.json(dbRecipient);
+    })
+})
+
+app.post("/api/recip/", function(req, res) {
+  console.log("POST")
+  db.Recipient.create({recipient_name:"Test6", userID: 6})
+})
 };
