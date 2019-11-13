@@ -12,54 +12,54 @@ module.exports = function(app) {
     res.render('home');
   });
 
-  app.get('/dashboard', (req, res) => {
-    var data = {
-      layout: 'dashboard',
-    people: [
-        {
-          recipient_name: 'Austin',
-          recipient_id: '1',
-          user_id: '1'
-        },
-        {
-          recipient_name: 'Joel',
-          recipient_id: '2',
-          user_id: '1'
-        },
-        {
-          recipient_name: 'Scott',
-          recipient_id: '3',
-          user_id: '1'
-        },
-        {
-          recipient_name: 'Max',
-          recipient_id: '4',
-          user_id: '1'
-        },
-        {
-          recipient_name: 'test 1',
-          recipient_id: '5',
-          user_id: '1'
-        },
-        {
-          recipient_name: 'test 2',
-          recipient_id: '6',
-          user_id: '1'
-        },
-        {
-          recipient_name: 'test 3',
-          recipient_id: '7',
-          user_id: '1'
-        },
-        {
-          recipient_name: 'test 4',
-          recipient_id: '8',
-          user_id: '1'
-        }
-      ]
-    }
-    res.render('dashboard', data);
-  });
+  // app.get('/dashboard', (req, res) => {
+  //   var data = {
+  //     layout: 'dashboard',
+  //   people: [
+  //       {
+  //         recipient_name: 'Austin',
+  //         recipient_id: '1',
+  //         user_id: '1'
+  //       },
+  //       {
+  //         recipient_name: 'Joel',
+  //         recipient_id: '2',
+  //         user_id: '1'
+  //       },
+  //       {
+  //         recipient_name: 'Scott',
+  //         recipient_id: '3',
+  //         user_id: '1'
+  //       },
+  //       {
+  //         recipient_name: 'Max',
+  //         recipient_id: '4',
+  //         user_id: '1'
+  //       },
+  //       {
+  //         recipient_name: 'test 1',
+  //         recipient_id: '5',
+  //         user_id: '1'
+  //       },
+  //       {
+  //         recipient_name: 'test 2',
+  //         recipient_id: '6',
+  //         user_id: '1'
+  //       },
+  //       {
+  //         recipient_name: 'test 3',
+  //         recipient_id: '7',
+  //         user_id: '1'
+  //       },
+  //       {
+  //         recipient_name: 'test 4',
+  //         recipient_id: '8',
+  //         user_id: '1'
+  //       }
+  //     ]
+  //   }
+  //   res.render('dashboard', data);
+  // });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
