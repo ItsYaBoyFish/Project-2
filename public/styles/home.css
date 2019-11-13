@@ -138,6 +138,23 @@ input {
 	transform: translate(-50%, -50%);
 }
 
+.alert-message-error {
+	background-color: red;
+	height: 20px;
+	padding-left: 9px;
+	padding-right: 9px;
+	border-radius: 5px;
+	color: #fff;
+}
+.alert-message-success {
+	background-color: green;
+	height: 20px;
+	padding-left: 9px;
+	padding-right: 9px;
+	border-radius: 5px;
+	color: #fff;
+}
+
 .form-container {
 	position: absolute;
 	top: 0;
@@ -229,6 +246,11 @@ input {
 	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
 }
+
+.overlay-title {
+	font-size: 35px;
+}
+
 
 .overlay-left {
 	transform: translateX(-20%);

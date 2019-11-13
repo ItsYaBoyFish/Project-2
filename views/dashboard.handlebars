@@ -1,0 +1,76 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <div class="navbar-item">
+      <h1 class="navbar-title title">Lipin</h1>
+    </div>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/dashboard"class="navbar-item">
+        Shopping Lists
+      </a>
+      <a href="/mylist"class="navbar-item">
+        My List
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a href="/" class="button is-light logOut-Button">
+            Log out
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="card-container">
+  <div class="modal-button-container">
+    <h3 class="modal-header-title">Gift Recipients!</h3>
+    <button class="button" id="modal-show">Create A Recipient!</button>
+  </div>
+  {{#each people}}
+    <div class="card">
+      <div class="card-content">
+        <h3 class="title card-title">{{this.recipient_name}}</h3>
+      </div> <!-- Card Content -->
+      <footer class="card-footer">
+        <a data-recipient-name={{this.recipient_name}} data-recipient-id={{this.recipient_id}} class="card-footer-item button functionality-showGifts">Show Gift List</a>
+        <button data-recipient-name={{this.recipient_name}} data-recipient-id={{this.recipient_id}} class="card-footer-item button functionality-delete">Delete</button>
+        {{!-- <p data-recipient-id={{this.recipient_id}} class="card-footer-item button gifts">Show Gift List</>
+        <p data-recipient-id={{this.recipient_id}} class="card-footer-item button delete">Delete</p> --}}
+      </footer>
+    </div> <!-- Card -->
+  {{/each}}
+</div> <!-- End of container -->
+
+<!-- Modal -->
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Create A New Gift Recipient!</p>
+      <button class="delete close-modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+        <form action="#">
+          <input id="new-recip-name" type="text" class="input" placeholder="Name">
+        </form>
+    </section>
+    <footer class="modal-card-foot">
+      <button id="submit-modal" class="button modal-save">Save!</button>
+      <button class="button close-modal">Cancel</button>
+    </footer>
+  </div>
+</div>
