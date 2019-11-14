@@ -123,3 +123,8 @@ p {
   margin-left: 1em;
 }
 
+.chart-container {
+  float: right;
+  margin-right: 170px;
+  margin-top: -35px;
+}

@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "active",
+    "username": "teamUser",
     "password": "password",
     "database": "giftListApp",
     "host": "localhost",

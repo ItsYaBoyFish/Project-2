@@ -35,6 +35,20 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/giftsPurchased/:id", function(req, res) {
+    db.Gift.findAll({
+      where: {
+        recipientID: req.params.id
+      }
+    }).then(function(dbGift) {
+      // var purchasedArray = [];
+      // dbGift.map(function(item) {
+      //   purchasedArray.push(item.purchased);
+      // });
+      res.send(dbGift);
+    });
+  });
+
   app.delete("/api/gifts/:id", function(req, res) {
     db.Gift.destroy({
       where: {

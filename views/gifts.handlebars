@@ -35,6 +35,9 @@
     <h3 class="modal-header-title is-3" id="recip-name">Gifts For: Austin</h3>
     <button class="button" id="modal-show">Create A Gift!</button>
   </div>
+  <div class="chart-container" style="height:40px; width:40px">
+      <canvas id="pieChart"></canvas>
+  </div>
   {{#each giftsPurchased}}
     <div class="card purchased-card">
       <div class="card-content">
@@ -85,3 +88,6 @@
     </footer>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script  type="text/javascript" src="/js/chart.js"></script>
